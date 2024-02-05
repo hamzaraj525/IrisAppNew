@@ -1,0 +1,23 @@
+export default Images = {
+  // Home
+  CHAT_ICON: require('../assets/Home/Chat.png'),
+  LOGOUT: require('../assets/Home/Logout.png'),
+  LOG_IN: require('../assets/Home/LogIn.png'),
+  ARROW_UP: require('../assets/Home/UpArrow.png'),
+  ARROW_DOWN: require('../assets/Home/DownArrow.png'),
+  PLANE: require('../assets/Home/Paper-plane.png'),
+  DOTS: require('../assets/Home/Dotsss.json'),
+  ERROR_: require('../assets/Home/Error.png'),
+  BG: require('../assets/Home/Bg.jpeg'),
+  SMS: require('../assets/Home/SmsIcon.jpeg'),
+  LOGOUT2: require('../assets/Home/Logout.json'),
+  Success: require('../assets/Home/Success1.json'),
+  PLUS: require('../assets/Home/Plus.png'),
+  CAMERA: require('../assets/Home/Camera.png'),
+  GALLERY: require('../assets/Home/Gallery.png'),
+  CLOSE: require('../assets/Home/Close.png'),
+  ONBOARD_1: require('../assets/images/onboarding-1.png'),
+  ONBOARD_2: require('../assets/images/onboarding-1.png'),
+  ONBOARD_3: require('../assets/images/onboarding-1.png'),
+  LOGO_THIN: require('../assets/images/logo-thin.png'),
+};
