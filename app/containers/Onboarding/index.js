@@ -91,7 +91,7 @@ function NextButton({dataLength, flatListIndex, flatListRef, navigation}) {
 			flatListRef.current?.scrollToIndex({index: flatListIndex.value + 1});
 		} else {
 			dispatch(setOnBoardStatus(true));
-			navigation.navigate('Auth');
+			navigation.replace('Auth');
 		}
 	};
 
@@ -151,16 +151,16 @@ function OnboardingContainer({navigation}) {
 	});
 
 	return (
-		<View className="flex-1 bg-main pb-10 px-8" style={{paddingTop: insets.top + 16}}>
+		<View className="flex-1 bg-softblue pb-10 px-8" style={{paddingTop: insets.top + 16}}>
 			<View className="flex-row items-center justify-between">
 				<Image source={require('@/assets/images/logo-thin.png')} className="w-7 h-5" resizeMode="contain" />
 
 				<Button
 					onPress={() => {
 						dispatch(setOnBoardStatus(true));
-						navigation.navigate('Auth');
+						navigation.replace('Auth');
 					}}>
-					<Text className="font-rubik text-sm text-white/50">Skip</Text>
+					<Text className="font-rubik text-sm text-white/90">Skip</Text>
 				</Button>
 			</View>
 

@@ -31,7 +31,7 @@ const IntroChatContainer = ({navigation}) => {
 				<Text style={{marginTop: 5, textAlign: 'center', width: '95%', color: Colors.PRIMARY_BLUE, fontSize: 12, fontWeight: '500', fontFamily: Fonts.POPPINS}}>{Constraints.SUBTITLE_AI}</Text>
 
 				<TouchableOpacity activeOpacity={0.8} style={{marginTop: '10%', borderRadius: 20, width: '65%', backgroundColor: Colors.main, height: 50, alignItems: 'center', justifyContent: 'center'}} onPress={() => navigation.navigate('HomeChat')}>
-					<Text style={{color: Colors.white, fontSize: 15, margin: 'auto', fontWeight: '700', fontFamily: Fonts.POPPINS}}>Ask now</Text>
+					<Text style={{color: Colors.white, fontSize: 15, margin: 'auto', fontWeight: '700', fontFamily: Fonts.POPPINS}}>Start Chatting with Iris</Text>
 				</TouchableOpacity>
 			</View>
 		</>
