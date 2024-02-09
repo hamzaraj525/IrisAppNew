@@ -40,7 +40,7 @@ function Tabbar({state, descriptors, navigation}) {
 	if (routeName === 'Root:Home' && stackName === 'HomeChat') return null;
 
 	return (
-		<View className="flex-row items-center justify-evenly bg-softblue h-20 relative">
+		<View className="flex-row items-center justify-evenly bg-main h-20 relative">
 			{state.routes.map((route, index) => {
 				const {options} = descriptors[route.key];
 				const Icon = options.tabBarIcon;
@@ -67,7 +67,7 @@ function Tabbar({state, descriptors, navigation}) {
 				return (
 					<View key={index} className="relative items-center justify-center z-10" style={{width: tabWidth}}>
 						<AnimatedButton
-							className={`relative z-10 items-center justify-center rounded-full bg-softblue ${isFocused ? 'w-12 h-12' : 'w-full h-20'}`}
+							className={`relative z-10 items-center justify-center rounded-full bg-main ${isFocused ? 'w-12 h-12' : 'w-full h-20'}`}
 							style={[state.index === index && marginAnimation]}
 							accessibilityRole="button"
 							accessibilityStates={isFocused ? ['selected'] : []}

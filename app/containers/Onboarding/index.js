@@ -16,9 +16,9 @@ const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const AnimatedAntDesign = Animated.createAnimatedComponent(AntDesign);
 
 const onboarding = [
-	{id: 1, image: require('@/assets/images/onboarding-1.png'), title: 'Messaging with your friends is fun with Wisp'},
-	{id: 2, image: require('@/assets/images/onboarding-2.png'), title: 'Use wisp to communicate with your loved ones'},
-	{id: 3, image: require('@/assets/images/onboarding-3.png'), title: 'You can create a community and reach more people'},
+	{id: 1, image: require('@/assets/images/onboarding-1.png'), title: 'Iris is your personal AI assistant designed to make AI easy!'},
+	{id: 2, image: require('@/assets/images/onboarding-2.png'), title: 'Iris a picture of the inside of your fridge and she will send you recipe ideas with what you have on hand!'},
+	{id: 3, image: require('@/assets/images/onboarding-3.png'), title: 'Iris can change lives - share Iris with friends and earn $ when they sign up!'},
 ];
 
 function Onboard({index, item, x}) {

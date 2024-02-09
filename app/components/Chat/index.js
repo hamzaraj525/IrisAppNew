@@ -15,7 +15,7 @@ import ImageLoader from '../ImageLoader';
 import ListItem from '../ListItem';
 import Constraints from '../../common/Constraints';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -91,25 +91,25 @@ const Chat = () => {
 
 	const hideDropPop = () => setOpen(false);
 
-	function Dropup() {
-		return (
-			<Animated.View className="absolute bottom-7 right-24 w-40 z-20" style={[animation, {zIndex: opened ? 20 : -1}]}>
-				<View className="bg-white rounded-3xl py-3">
-					<Button onPress={() => takeImagePermission('Cam', setSelectedImg, hideDropPop, setShowFullImgModal)} className="px-6 py-3">
-						<Text className="font-rubik font-light text-sm text-black">Camera</Text>
-					</Button>
+	// function Dropup() {
+	// 	return (
+	// 		<Animated.View className="absolute bottom-7 right-24 w-40 z-20" style={[animation, {zIndex: opened ? 20 : -1}]}>
+	// 			<View className="bg-white rounded-3xl py-3">
+	// 				<Button onPress={() => takeImagePermission('Cam', setSelectedImg, hideDropPop, setShowFullImgModal)} className="px-6 py-3">
+	// 					<Text className="font-rubik font-light text-sm text-black">Camera</Text>
+	// 				</Button>
 
-					<Button onPress={() => takeImagePermission('Photo', setSelectedImg, hideDropPop, setShowFullImgModal)} className="px-6 py-3">
-						<Text className="font-rubik font-light text-sm text-black">Photo</Text>
-					</Button>
-				</View>
+	// 				<Button onPress={() => takeImagePermission('Photo', setSelectedImg, hideDropPop, setShowFullImgModal)} className="px-6 py-3">
+	// 					<Text className="font-rubik font-light text-sm text-black">Photo</Text>
+	// 				</Button>
+	// 			</View>
 
-				<Button className="p-4 ml-auto" onPress={() => hideDropPop()}>
-					<AntDesign name="close" size={20} color={Colors.white} />
-				</Button>
-			</Animated.View>
-		);
-	}
+	// 			<Button className="p-4 ml-auto" onPress={() => hideDropPop()}>
+	// 				<AntDesign name="close" size={20} color={Colors.white} />
+	// 			</Button>
+	// 		</Animated.View>
+	// 	);
+	// }
 
 	return (
 		<>
@@ -136,13 +136,20 @@ const Chat = () => {
 			/>
 
 			<KeyboardAvoidingView keyboardVerticalOffset={10} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-				<View style={{alignSelf: 'center', width: '90%'}} className="flex-row items-start h-20 bg-white pt-1">
+				<View style={{alignItems: 'center', alignSelf: 'center', width: '90%'}} className="flex-row items-start h-20 bg-white pt-1">
+					<TouchableOpacity style={{backgroundColor: 'transparent', alignItems: 'center', justifyContent: 'center', width: 30, height: 30}} disabled={!!isFetching} activeOpacity={0.6} onPress={() => takeImagePermission('Cam', setSelectedImg, hideDropPop, setShowFullImgModal)}>
+						<FontAwesome name="camera" size={22} color={Colors.main} />
+					</TouchableOpacity>
+
+					<TouchableOpacity
+						style={{marginLeft: 10, marginRight: 11, backgroundColor: 'transparent', alignItems: 'center', justifyContent: 'center', width: 30, height: 30}}
+						disabled={!!isFetching}
+						activeOpacity={0.6}
+						onPress={() => takeImagePermission('Photo', setSelectedImg, hideDropPop, setShowFullImgModal)}>
+						<FontAwesome name="picture-o" size={22} color={Colors.main} />
+					</TouchableOpacity>
 					<View className="bg-light rounded-3xl py-[14px] px-4 flex-row items-center flex-1">
 						<TextInput multiline style={styles.input} placeholder={'Enter your message'} placeholderTextColor={Constants.HexToRgba(Colors.black, 0.4)} onChangeText={text => setMessageTxt(text)} value={messageTxt} />
-
-						<TouchableOpacity disabled={!!isFetching} activeOpacity={0.6} onPress={() => setOpen(true)}>
-							<AntDesign name="menuunfold" size={14} color={Colors.main} />
-						</TouchableOpacity>
 					</View>
 
 					<TouchableOpacity
@@ -183,7 +190,7 @@ const Chat = () => {
 				/>
 			)}
 			{errorModal && <ErrorPopUp errorModal={errorModal} hideErrorModal={hideErrorModal} errorMsg={Constraints.SOMETHING} />}
-			<Dropup />
+			{/* <Dropup /> */}
 		</>
 	);
 };

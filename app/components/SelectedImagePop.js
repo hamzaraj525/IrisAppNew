@@ -45,7 +45,7 @@ const SelectedImagePop = ({showFullImgModal, hideFullImgModal, setSelectedImg, S
 										hideFullImgModal();
 										toggleChooseBtn();
 									}}>
-									<FastImage source={Images.CLOSE} style={styles.iconn} resizeMode={FastImage.resizeMode.contain} />
+									<FastImage tintColor={Colors.white} source={Images.CLOSE} style={styles.iconn} resizeMode={FastImage.resizeMode.contain} />
 								</Pressable>
 								<View style={{alignSelf: 'center', width: '90%'}} className="flex-row items-start h-20 bg-transparent pt-1">
 									<View className="bg-light rounded-3xl py-[14px] px-4 flex-row items-center flex-1">
@@ -88,9 +88,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		backgroundColor: `rgb(${baseColor + 30}, ${baseColor + 30}, ${baseColor + 30})`,
 	},
-	earningView: {
-		flex: 1,
-	},
+	earningView: {backgroundColor: Colors.white, flex: 1},
 	buttonContainer: {
 		width: '100%',
 		flexDirection: 'column',
@@ -105,7 +103,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		height: 35,
 		borderRadius: 35 / 2,
-		backgroundColor: Colors.PRIMARY_WHITE, // Use a consistent background color
+		backgroundColor: Colors.black, // Use a consistent background color
 	},
 	verifyButtonText: {
 		color: Colors.BLACK,
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
 		width: '90%',
 		fontFamily: Fonts.POPPINS,
 		alignSelf: 'center',
-		backgroundColor: 'white',
+		backgroundColor: Colors.light,
 		borderRadius: 20,
 	},
 	modalText: {

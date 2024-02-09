@@ -8,6 +8,7 @@ import {actions, updateUserData} from '../redux/reducer/AppRedux';
 import Fonts from '../common/Fonts';
 import {MotiView} from 'moti';
 import ActionPopUp from './ActionPopUp';
+import Feather from 'react-native-vector-icons/Feather';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
 const {height} = Dimensions.get('window');
@@ -58,8 +59,13 @@ const Header = props => {
 				</View>
 
 				{!props.loginScreen && (
-					<TouchableHighlight onPress={() => setShowModal(true)} underlayColor={Colors.light} style={styles.logoutBtn}>
-						<FastImage source={Images.LOGOUT} style={styles.logoutIcon} resizeMode="contain" tintColor={Colors.DARK_GREY} />
+					<TouchableHighlight
+						onPress={() => {
+							navigation.navigate('Settings');
+						}}
+						underlayColor={Colors.light}
+						style={styles.logoutBtn}>
+						<Feather name="settings" size={18} color={Colors.blue} />
 					</TouchableHighlight>
 				)}
 			</View>

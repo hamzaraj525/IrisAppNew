@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, ScrollView, Text, Dimensions} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -15,8 +16,26 @@ import {Colors} from '@/common';
 // Layout
 import Layout from '@/Layout';
 import Constraints from '../../common/Constraints';
+import ActionPopUp from '../../components/ActionPopUp';
+import {updateUserData} from '../../redux/reducer/AppRedux';
+import {useDispatch, useSelector} from 'react-redux';
 
 function SettingsContainer({navigation}) {
+	const [showModal, setShowModal] = useState(false);
+	const dispatch = useDispatch();
+
+	const handleLogout = () => {
+		dispatch(updateUserData({phone: '', countryItem: null}));
+		setShowModal(false);
+		setTimeout(() => {
+			navigation.navigate('Auth');
+		}, 200);
+	};
+
+	const hideModal = () => {
+		setShowModal(false);
+	};
+
 	const insets = useSafeAreaInsets();
 	return (
 		<>
@@ -58,12 +77,27 @@ function SettingsContainer({navigation}) {
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Invite friends</Text>
 					</Button>
 
-					<Button className="flex-row items-center py-6" onPress={() => navigation.navigate('StorageSettings')}>
+					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('StorageSettings')}>
 						<MaterialCommunityIcons name="database-sync" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Storage space</Text>
 					</Button>
+
+					<Button
+						className="flex-row items-center py-6 border-b-[1px] border-purple/10"
+						onPress={() => {
+							setShowModal(true);
+						}}>
+						{/* <MaterialCommunityIcons name="account-box-outline" size={20} color={Colors.purple} />
+						
+						*/}
+
+						<Feather name="settings" size={20} color={Colors.purple} />
+						<Text className="font-rubik font-medium text-sm text-black ml-2">Log out</Text>
+					</Button>
 				</ScrollView>
 			</View>
+
+			<ActionPopUp showModal={showModal} hideModal={hideModal} actionBtn={handleLogout} logIn={true} />
 		</>
 	);
 }
