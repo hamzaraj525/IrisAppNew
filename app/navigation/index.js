@@ -8,10 +8,11 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {navigationRef} from '@/RootNavigation';
 
 // Main Screens
-import Settings from './Settings';
-import Home from './Home';
 
-import {LoginContainer, OnboardingContainer} from '../containers';
+import Home from './Home';
+import Settings from './../navigation/Settings';
+
+import {LoginContainer, OnboardingContainer, SettingsContainer} from '../containers';
 
 // Components
 import {TabBar, TabBarIcon} from '@/components';

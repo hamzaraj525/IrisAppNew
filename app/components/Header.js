@@ -61,7 +61,7 @@ const Header = props => {
 				{!props.loginScreen && (
 					<TouchableHighlight
 						onPress={() => {
-							navigation.navigate('Settings');
+							navigation.navigate('Root:Settings');
 						}}
 						underlayColor={Colors.light}
 						style={styles.logoutBtn}>
