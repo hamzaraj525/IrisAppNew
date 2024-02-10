@@ -36,11 +36,11 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Iris needs permission to open the camera</string>
+	<string>This permission is required to enable visual interaction capabilities. Our AI chatbot can analyze images captured in real-time to provide more accurate responses, such as identifying objects.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Iris needs permission to open the gallery</string>
+	<string>This permission is necessary to allow our AI chatbot to utilize existing media content on your device. You can share photos from your gallery with the chatbot to enrich conversations, provide visual context, or retrieve information.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

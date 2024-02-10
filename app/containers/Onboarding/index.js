@@ -17,7 +17,7 @@ const AnimatedAntDesign = Animated.createAnimatedComponent(AntDesign);
 
 const onboarding = [
 	{id: 1, image: require('@/assets/images/onboarding-1.png'), title: 'Iris is your personal AI assistant designed to make AI easy!'},
-	{id: 2, image: require('@/assets/images/onboarding-2.png'), title: 'Iris a picture of the inside of your fridge and she will send you recipe ideas with what you have on hand!'},
+	{id: 2, image: require('@/assets/images/onboarding-2.png'), title: 'Text Iris a picture of the inside of your fridge and she will send you recipe ideas with what you have on hand!'},
 	{id: 3, image: require('@/assets/images/onboarding-3.png'), title: 'Iris can change lives - share Iris with friends and earn $ when they sign up!'},
 ];
 
@@ -151,7 +151,7 @@ function OnboardingContainer({navigation}) {
 	});
 
 	return (
-		<View className="flex-1 bg-softblue pb-10 px-8" style={{paddingTop: insets.top + 16}}>
+		<View className="flex-1 bg-main pb-10 px-8" style={{paddingTop: insets.top + 16}}>
 			<View className="flex-row items-center justify-between">
 				<Image source={require('@/assets/images/logo-thin.png')} className="w-7 h-5" resizeMode="contain" />
 

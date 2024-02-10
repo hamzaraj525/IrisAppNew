@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, ScrollView, Text, Dimensions} from 'react-native';
+import {View, ScrollView, Text, Dimensions, Linking} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -52,7 +52,7 @@ function SettingsContainer({navigation}) {
 					alignSelf: 'center', // Center the View horizontally
 				}}>
 				<ScrollView showsVerticalScrollIndicator={false}>
-					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('AccountSettings')}>
+					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => Linking.openURL('https://billing.stripe.com/p/login/cN27v73excIj0uI4gg')}>
 						<MaterialCommunityIcons name="account-box-outline" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Account</Text>
 					</Button>
@@ -62,25 +62,25 @@ function SettingsContainer({navigation}) {
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Chat</Text>
 					</Button>
 
-					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('SecuritySettings')}>
+					{/* <Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('SecuritySettings')}>
 						<MaterialCommunityIcons name="security" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Security</Text>
-					</Button>
+					</Button> */}
 
 					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('About')}>
 						<MaterialIcons name="question-mark" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">About and help</Text>
 					</Button>
 
-					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('InviteFriends')}>
+					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => Linking.openURL('https://affiliate.irisai.app/signup')}>
 						<MaterialCommunityIcons name="account-group" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Invite friends</Text>
 					</Button>
 
-					<Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('StorageSettings')}>
+					{/* <Button className="flex-row items-center py-6 border-b-[1px] border-purple/10" onPress={() => navigation.navigate('StorageSettings')}>
 						<MaterialCommunityIcons name="database-sync" size={20} color={Colors.purple} />
 						<Text className="font-rubik font-medium text-sm text-black ml-2">Storage space</Text>
-					</Button>
+					</Button> */}
 
 					<Button
 						className="flex-row items-center py-6 border-b-[1px] border-purple/10"
